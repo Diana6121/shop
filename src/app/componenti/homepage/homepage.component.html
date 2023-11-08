@@ -1,0 +1,104 @@
+
+<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalLeft" >Aggiungi un prodotto</button>
+<div class="modal it-dialog-scrollable fade" tabindex="-1" role="dialog" id="modalLeft" aria-labelledby="modalLeftTitle">
+  <div class="modal-dialog modal-dialog-left" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title h5 " id="modalLeftTitle">Inserisci i campi</h2>
+        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Chiudi finestra modale">
+          <svg class="icon">
+            <use href="/bootstrap-italia/dist/svg/sprites.svg#it-close"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-sm" type="button">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+          <mat-list-item *ngFor="let categoria of categorie" (click)="caricaVestiti(categoria.name)" >
+            {{categoria}}
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        </mat-sidenav-content>
+</mat-sidenav-container>
+<div class='container'>
+
+    <div class="row">
+        <div *ngFor="let categoria of categorie" class="col">
+            <button class="btn" (click)="caricaVestiti(categoria)">
+                {{ categoria }}
+            </button>
+        </div>
+        <div *ngIf="categoriaSelezionata">
+            Categoria selezionata{{ categoriaSelezionata }}
+    
+</div>
+
+    <div class="row">
+        <div class="col" *ngFor="let vestito of vestiti">
+          
+            <div class="card" style="width: 19rem;" (click)="mostraDescrizioneVestito(vestito)" [ngClass]="{'clickable': vestito.mostraDescrizione}">
+                <img src='{{vestito.image}}' class="image" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ vestito.title }}</h5>
+                  <p class="description"></p>
+                  <p>Price: {{vestito.price}}</p>
+                  <a href="#" class="btn btn-primary" (click)="delete(vestito.id)">Elimina</a> 
+                  <p></p>
+                   <button class="btn btn-primary" (click)="aggiungiAlCarrello(vestito)">Aggiungi al carrello</button>
+                </div>
+            </div>
+             <p class="description" *ngIf="vestito.mostraDescrizione">{{vestito.description}}</p>
+        </div>
+    </div>
+        <p></p>
+    <div class="container">
+    <div class="row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+          <h1></h1>
+        <button type="btnn" class="btn btn-primary" data-toggle="modal" data-target="#carelloModal">
+            Open Cart
+        </button>
+        
+        <div class="col">
+
+  <div class="modal fade" id="carrelloModal" tabindex="-1" role="dialog" aria-labelledby="carrelloModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="carrelloModalLabel">Il Tuo Carrello</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+  
+        </div>
+        
+        </div>
+    </div>
+</div>
