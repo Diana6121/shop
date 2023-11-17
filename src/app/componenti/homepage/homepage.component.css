@@ -1,4 +1,7 @@
 
+.logo {
+  width: 5px; 
+}
 
 .container  { 
    display: flex;
@@ -7,8 +10,8 @@
    flex-direction: column;
    align-items: center;
    text-align: center;
-}
 
+}
 
 .card {
     flex: 1;
@@ -20,6 +23,7 @@
     flex-direction: column;
     margin-left: auto;
     font-family: 'Times New Roman', Times, serif;
+    margin-top: 100px;
 }
 
 .card img {
@@ -34,29 +38,34 @@
     font-size: 16px;
 }
 
-.btn-primary {
+.btnn.btn-primary {
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+  
 }
 
-.btn-primary:hover {
-    background-color:red;
 
-}
+
+
 
 .mat-sidenav::backdrop {
     width: 150px;
     background-color: gray;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
+    margin-top: 20px;
    
   }
 
+  .mat-sidenav-content {
+    overflow-y: auto,
+  }
+
   .mat-list-item:hover {
-    height: 30spx; 
+    height: 30px; 
     line-height: 24px; 
     padding: 8 12px,
    
@@ -91,20 +100,92 @@ text-align: center;
     text-decoration:solid;
     margin-bottom: 10px;
     font-family: 'Times New Roman', Times, serif;
+    margin-top: 68px;
 
   }
 
-.btnn {
-  background-color: #007bff;
+
+  .btn.btn-primary.btn-sm {
+  background-color: #007bff(94, 0 , 0);
   color: white;
   size: 10px;
     text-align:center;
     text-decoration:solid;
     margin-top: auto;
     font-family: 'Times New Roman', Times, serif;
+   
+}
+.btn-primary:hover {
+  background-color:red;
 
 }
 
+    .btn:hover {
+      background-color: #0056b3
+    }
+
 .it-dialog-scrollable {
  align-self: modal;
+}
+ 
+.header {
+padding: 20px 0;
+}
+
+.cart_value {
+  background-color: #007bff; 
+  color: #fff; 
+  border: 1px solid #007bff; 
+  border-radius: 4px; 
+  padding: 6px 12px;
+  box-shadow: 0 2px 4px rgba (0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.cart_value:hover {
+  background-color:#0056b3 ;
+}
+
+.cart_icon{
+position: absolute;
+top:-16;
+right: 1px;
+background:#fff ;
+border:1px #ccc;
+padding: 4px 10px;
+font-weight: 800;
+font-size: 16px;
+
+}
+
+.cart_icon {
+  position: absolute;
+  cursor: pointer;
+}
+.cart_icon:focus{
+  outline: none;
+  border: none;
+}
+
+form.form-inline {
+  display: flex;
+  align-items:center;
+  margin-top: -150px;
+  margin-right: 300px;
+  font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.btn.btn-primary {
+  margin-top: -70px;
+}
+.btn.btn-outline-primary.btn-sm {
+margin-top: -20px;
+
+
+}
+.ul {
+  margin-left: 100px;
 }

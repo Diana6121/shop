@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoriaService {
   private apiUrl = 'https://fakestoreapi.com/products/categories';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getProductsByCategory(category: string): Observable<any[]> {
     const url = `${this.apiUrl}/category/${category}`;

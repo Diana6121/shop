@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'commerce-angular';
+  logoUrl:string = 'assets/logo.png';
 }
